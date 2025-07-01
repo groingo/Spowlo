@@ -41,9 +41,8 @@ jobs:
       - name: Build Release APK
         run: ./gradlew :app:assembleRelease
 
-      # Upload APK artifact for download
       - name: Upload APK artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: Spowlo-release-apk
           path: app/build/outputs/apk/release/app-release.apk
