@@ -27,6 +27,11 @@ jobs:
       - name: Make Gradle Wrapper Executable
         run: chmod +x ./gradlew
 
+      - name: Create local.properties
+        run: |
+          echo "sdk.dir=$ANDROID_SDK_ROOT" > local.properties
+
+
       # Publish your library to Maven Local
       - name: Publish spotdl-android to Maven Local
         run: ./gradlew :spotdl-android:publishToMavenLocal
